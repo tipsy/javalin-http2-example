@@ -43,8 +43,8 @@ public class Main {
 
             // SSL Context Factory for HTTPS and HTTP/2
             SslContextFactory sslContextFactory = new SslContextFactory();
-            sslContextFactory.setKeyStorePath(Main.class.getResource("/keystore.jks").toExternalForm()); // switch out this with your real keystore
-            sslContextFactory.setKeyStorePassword("password"); // switch out this with your real keystore
+            sslContextFactory.setKeyStorePath(Main.class.getResource("/keystore.jks").toExternalForm()); // replace with your real keystore
+            sslContextFactory.setKeyStorePassword("password"); // replace with your real password
             sslContextFactory.setCipherComparator(HTTP2Cipher.COMPARATOR);
             sslContextFactory.setProvider("Conscrypt");
 
@@ -64,8 +64,6 @@ public class Main {
             ServerConnector http2Connector = new ServerConnector(server, ssl, alpn, h2, new HttpConnectionFactory(httpsConfig));
             http2Connector.setPort(8443);
             server.addConnector(http2Connector);
-
-            ALPN.debug = false;
 
             return server;
         });

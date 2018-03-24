@@ -26,8 +26,8 @@ private fun createHttp2Server() = EmbeddedJettyFactory {
     }
 
     val sslContextFactory = SslContextFactory().apply {
-        keyStorePath = Main::class.java.getResource("/keystore.jks").toExternalForm() // switch out this with your real keystore
-        setKeyStorePassword("password") // switch out this with your real keystore
+        keyStorePath = Main::class.java.getResource("/keystore.jks").toExternalForm() // replace with your real keystore
+        setKeyStorePassword("password") // replace with your real password
         cipherComparator = HTTP2Cipher.COMPARATOR
         provider = "Conscrypt"
     }
