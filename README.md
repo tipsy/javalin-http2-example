@@ -1,4 +1,4 @@
-A fully working HTTP2 example using Jetty and Javalin
+# A fully working HTTP2 example with Jetty and Javalin
 
 Javalin will run on any Jetty server you provide it, and Jetty supports HTTP2 out of box. Here is how to set it up:
 
@@ -10,9 +10,14 @@ The example uses Conscrypt as the SSL provider, which is the [recommended by Jet
 
 The ALPN API version you need to use is specific to your Java version (see [Jetty docs](https://www.eclipse.org/jetty/documentation/9.4.x/alpn-chapter.html#alpn-versions))
 
-When you run the example there will be a HTTP1.1 server on port 8080, and HTTP2 server on 8443 ()with fall back to SSL HTTP 1.1)
+When you run the example there will be a HTTP1.1 server on port 8080, and HTTP2 server on 8443 (with fall back to SSL HTTP 1.1)
 
 Open Chrome and go to https://localhost:8443 you'll see in the Developer tools under network tab, you are connecting using "h2", which means HTTP2.
 
 If you go to `/static-files-test.html`, open the Network tab and set your emulated network to 3G, you'll notice the difference:
 
+### HTTP1.1 
+![http1](https://github.com/tipsy/javalin-http2-example/blob/master/readme/http1.PNG)
+
+### HTTP2
+![http2](https://github.com/tipsy/javalin-http2-example/blob/master/readme/http2.PNG)
