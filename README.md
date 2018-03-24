@@ -11,7 +11,7 @@ The example uses Conscrypt as the SSL provider, which is [recommended by Jetty](
 
 The ALPN API version you need to use is specific to your JDK version. Find your correct version in the [Jetty docs](https://www.eclipse.org/jetty/documentation/9.4.x/alpn-chapter.html#alpn-versions)
 
-When you run the example there will be a HTTP1.1 server on port 8080 and HTTP2 server on 8443 (with fallback to SSL HTTP 1.1).
+The example has a HTTP1.1 connector on port 8080 and HTTP2 connector on 8443 (with fallback to SSL HTTP 1.1).
 
 To verify that everything is working, open Chrome (or your browser of choice), go to https://localhost:8443, and open the network tab in the devtols. You should see "h2" in the "Protocol" column.
 
