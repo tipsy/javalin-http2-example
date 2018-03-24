@@ -10,17 +10,16 @@ repositories {
 }
 
 dependencies {
-    def jettyVersion = '9.4.8.v20171121'
-    def alpnVersion = '8.1.12.v20180117'
+    def jettyVersion = '9.4.9.v20180320'
+    def alpnBootVersion = '8.1.12.v20180117'
     def alpnApiVersion = '1.1.3.v20160715'
-    def javalinVersion = '1.3.0'
+    def javalinVersion = '1.5.0'
     def slf4jVersion = '1.7.25'
-
 
     compile "org.eclipse.jetty.http2:http2-server:$jettyVersion"
     compile "org.eclipse.jetty:jetty-alpn-conscrypt-server:$jettyVersion"
     compile "org.eclipse.jetty.alpn:alpn-api:$alpnApiVersion"
-    runtime "org.mortbay.jetty.alpn:alpn-boot:$alpnVersion"
+    runtime "org.mortbay.jetty.alpn:alpn-boot:$alpnBootVersion"
 
     compile "io.javalin:javalin:$javalinVersion"
     compile "org.slf4j:slf4j-api:$slf4jVersion"
