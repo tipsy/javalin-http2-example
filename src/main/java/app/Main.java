@@ -1,7 +1,6 @@
 package app;
 
 import io.javalin.Javalin;
-import io.javalin.embeddedserver.EmbeddedServer;
 import io.javalin.embeddedserver.jetty.EmbeddedJettyFactory;
 import org.eclipse.jetty.alpn.ALPN;
 import org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory;

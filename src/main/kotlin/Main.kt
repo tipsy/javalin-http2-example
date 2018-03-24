@@ -2,16 +2,10 @@ package app
 
 import io.javalin.Javalin
 import io.javalin.embeddedserver.jetty.EmbeddedJettyFactory
-import org.eclipse.jetty.alpn.ALPN
 import org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory
 import org.eclipse.jetty.http2.HTTP2Cipher
 import org.eclipse.jetty.http2.server.HTTP2ServerConnectionFactory
-import org.eclipse.jetty.server.HttpConfiguration
-import org.eclipse.jetty.server.HttpConnectionFactory
-import org.eclipse.jetty.server.SecureRequestCustomizer
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.server.ServerConnector
-import org.eclipse.jetty.server.SslConnectionFactory
+import org.eclipse.jetty.server.*
 import org.eclipse.jetty.util.ssl.SslContextFactory
 
 fun main(args: Array<String>) {
