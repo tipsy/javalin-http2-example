@@ -1,13 +1,26 @@
-plugins {
-    id 'java'
-    id 'application'
+group 'io.javalin'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.2.31'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
-mainClassName = 'app.Main'
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+
+mainClassName = 'app.Main'
 
 dependencies {
     def jettyVersion = '9.4.9.v20180320'

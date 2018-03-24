@@ -44,8 +44,8 @@ public class Main {
 
             // SSL Context Factory for HTTPS and HTTP/2
             SslContextFactory sslContextFactory = new SslContextFactory();
-            sslContextFactory.setKeyStorePath(Main.class.getResource("/keystore.jks").toExternalForm());
-            sslContextFactory.setKeyStorePassword("password");
+            sslContextFactory.setKeyStorePath(Main.class.getResource("/keystore.jks").toExternalForm()); // switch out this with your real keystore
+            sslContextFactory.setKeyStorePassword("password"); // switch out this with your real keystore
             sslContextFactory.setCipherComparator(HTTP2Cipher.COMPARATOR);
             sslContextFactory.setProvider("Conscrypt");
 
