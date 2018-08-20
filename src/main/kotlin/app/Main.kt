@@ -1,7 +1,6 @@
 package app
 
 import io.javalin.Javalin
-import io.javalin.embeddedserver.jetty.EmbeddedJettyFactory
 import org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory
 import org.eclipse.jetty.http2.HTTP2Cipher
 import org.eclipse.jetty.http2.server.HTTP2ServerConnectionFactory
@@ -11,7 +10,7 @@ import org.eclipse.jetty.util.ssl.SslContextFactory
 fun main(args: Array<String>) {
 
     val app = Javalin.create()
-            .embeddedServer(createHttp2Server())
+            .server { createHttp2Server() }
             .enableStaticFiles("/public")
             .start()
 
@@ -19,7 +18,7 @@ fun main(args: Array<String>) {
 
 }
 
-private fun createHttp2Server() = EmbeddedJettyFactory {
+private fun createHttp2Server(): Server {
 
     val alpn = ALPNServerConnectionFactory().apply {
         defaultProtocol = "h2"
@@ -45,7 +44,7 @@ private fun createHttp2Server() = EmbeddedJettyFactory {
 
     val fallback = HttpConnectionFactory(httpsConfig)
 
-    Server().apply {
+    return Server().apply {
         //HTTP/1.1 Connector
         addConnector(ServerConnector(server).apply {
             port = 8080
