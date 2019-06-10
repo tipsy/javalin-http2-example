@@ -16,10 +16,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Javalin app = Javalin.create()
-            .server(Main::createHttp2Server)
-            .enableStaticFiles("/public")
-            .start();
+        Javalin app = Javalin.create(config -> {
+            config.server(Main::createHttp2Server);
+            config.addStaticFiles("/public");
+        }).start();
 
         app.get("/", ctx -> ctx.result("Hello World"));
 

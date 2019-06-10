@@ -7,14 +7,14 @@ import org.eclipse.jetty.http2.server.HTTP2ServerConnectionFactory
 import org.eclipse.jetty.server.*
 import org.eclipse.jetty.util.ssl.SslContextFactory
 
-fun main(args: Array<String>) {
+fun main() {
 
-    val app = Javalin.create()
-            .server { createHttp2Server() }
-            .enableStaticFiles("/public")
-            .start()
+    val app = Javalin.create {
+        it.server { createHttp2Server() }
+        it.addStaticFiles("/public")
+    }.start()
 
-    app.get("/", { ctx -> ctx.result("Hello World") })
+    app.get("/") { it.result("Hello World") }
 
 }
 
