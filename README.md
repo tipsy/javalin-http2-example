@@ -17,6 +17,8 @@ To verify that everything is working, open Chrome (or your browser of choice), g
 
 If you go to `/static-files-test.html`, open the Network tab and set your emulated network to 3G, you'll notice the difference:
 
+**Note: WebSockets via HTTP2 are [currently not supported](https://github.com/eclipse/jetty.project/issues/4900) by the Jetty version used by Javalin. This functionality will be available in the upcoming Jetty version 10.0.**
+
 ### HTTP1.1 
 ![http1](https://github.com/tipsy/javalin-http2-example/blob/master/readme/http1.PNG)
 
