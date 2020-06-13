@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    def jettyVersion = '9.4.25.v20191220'
+    def jettyVersion = '9.4.29.v20200521'
     def alpnBootVersion = '8.1.12.v20180117'
     def alpnApiVersion = '1.1.3.v20160715'
     def javalinVersion = '3.9.0'
