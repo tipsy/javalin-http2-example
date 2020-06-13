@@ -9,7 +9,7 @@ The example includes a generated keystore, but you'll need to [generate your own
     
 The example uses Conscrypt as the SSL provider, which is [recommended by Jetty](https://webtide.com/conscrypting-native-ssl-for-jetty/).
 
-The ALPN API version you need to use is specific to your JDK version. Find your correct version in the [Jetty docs](https://www.eclipse.org/jetty/documentation/9.4.x/alpn-chapter.html#alpn-versions)
+The ALPN API version you need to use is specific to your JDK version. Find your correct version in the [Jetty docs](https://www.eclipse.org/jetty/documentation/current/alpn-chapter.html#alpn-versions)
 
 The example has a HTTP1.1 connector on port 8080 and HTTP2 connector on 8443 (with fallback to SSL HTTP 1.1).
 
